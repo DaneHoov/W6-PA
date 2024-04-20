@@ -22,9 +22,12 @@ printAndPause([200, 800, 200, 800, 200, 800])
 ***********************************************************************/
 
 function printAndPause(nums) {
-  // Your code here 
+  if (!nums.length) return nums
+  console.log(nums[0])
+  setTimeout(() => { printAndPause(nums.slice(1)) }, nums[0])
 }
 
+// console.log(printAndPause([200, 800, 200, 800, 200, 800]))
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = printAndPause;
